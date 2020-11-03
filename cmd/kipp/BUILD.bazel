@@ -37,8 +37,8 @@ docker_bundle(
     images = {
         "index.docker.io/uhthomas/kipp:latest": ":kipp",
         "index.docker.io/uhthomas/kipp:{STABLE_GIT_COMMIT}": ":kipp",
-        "ghcr.io/uhthomas/kipp:latest": ":kipp",
-        "ghcr.io/uhthomas/kipp:{STABLE_GIT_COMMIT}": ":kipp",
+        "ghcr.io/jcansdale-test/kipp:latest": ":kipp",
+        "ghcr.io/jcansdale-test/kipp:{STABLE_GIT_COMMIT}": ":kipp",
     },
 )
 
