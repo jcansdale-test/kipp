@@ -12,11 +12,6 @@ jobs:
       - uses: azure/docker-login@v1
         if: github.ref == 'refs/heads/master'
         with:
-          username: uhthomas
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - uses: azure/docker-login@v1
-        if: github.ref == 'refs/heads/master'
-        with:
           login-server: ghcr.io
           username: $GITHUB_ACTOR
           password: ${{ secrets.CR_PAT }}
