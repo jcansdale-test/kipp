@@ -17,3 +17,4 @@ jobs:
           password: ${{ secrets.CR_PAT }}
       - run: bazel run //cmd/kipp:push
         if: github.ref == 'refs/heads/master'
+
