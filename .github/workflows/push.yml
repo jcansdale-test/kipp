@@ -5,7 +5,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        try: [0,1,2,3]
+        try: [0,1,2,3,4,5,6,7]
     name: Test and push
     runs-on: ubuntu-latest
     steps:
