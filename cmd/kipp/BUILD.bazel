@@ -35,8 +35,6 @@ load("@io_bazel_rules_docker//docker:docker.bzl", "docker_bundle")
 docker_bundle(
     name = "kipp_bundle",
     images = {
-        "index.docker.io/uhthomas/kipp:latest": ":kipp",
-        "index.docker.io/uhthomas/kipp:{STABLE_GIT_COMMIT}": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:latest": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:{STABLE_GIT_COMMIT}": ":kipp",
     },
