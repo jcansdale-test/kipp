@@ -28,6 +28,7 @@ jobs:
   alpine:
     env:
       IMAGE: ghcr.io/jcansdale-test/kipp0:latest
+      SOURCE_IMAGE: ghcr.io/jcansdale-test/kipp2:latest
     strategy:
       fail-fast: false
       matrix:
@@ -35,6 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: docker login https://ghcr.io -u token -p ${{ secrets.CR_PAT }}
-      - run: docker pull alpine
-      - run: docker tag alpine ${{ env.IMAGE }}
+      - run: docker pull ${{ env.SOURCE_IMAGE }}
+      - run: docker tag ${{ env.SOURCE_IMAGE }} ${{ env.IMAGE }}
       - run: docker push ${{ env.IMAGE }}
