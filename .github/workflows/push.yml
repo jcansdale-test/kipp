@@ -2,6 +2,10 @@ name: Push
 on: [push]
 jobs:
   push:
+    strategy:
+      fail-fast: false
+      matrix:
+        try: [0,1,2,3]
     name: Test and push
     runs-on: ubuntu-latest
     steps:
