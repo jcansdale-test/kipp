@@ -49,7 +49,6 @@ docker_bundle(
         "ghcr.io/jcansdale-test/kipp2:11": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:12": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:13": ":kipp",
-        "ghcr.io/jcansdale-test/kipp2:13": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:14": ":kipp",
         "ghcr.io/jcansdale-test/kipp2:15": ":kipp"
     },
