@@ -5,37 +5,16 @@ on:
     types: [started]
 jobs:
   push:
-    strategy:
-      fail-fast: false
-      matrix:
-        try: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-    name: Test and push
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install bazelisk
-        run: curl -L "https://github.com/bazelbuild/bazelisk/releases/download/v1.6.1/bazelisk-linux-amd64" | install -D /dev/stdin "${GITHUB_WORKSPACE}/bin/bazel"
-      - run: bazel test //...
-      - uses: azure/docker-login@v1
-        if: github.ref == 'refs/heads/master'
-        with:
-          login-server: ghcr.io
-          username: $GITHUB_ACTOR
-          password: ${{ secrets.CR_PAT }}
-      - run: bazel run //cmd/kipp:push
-        if: github.ref == 'refs/heads/master'
-
-  alpine:
     env:
       IMAGE: ghcr.io/jcansdale-test/kipp0:latest
-      SOURCE_IMAGE: ghcr.io/jcansdale-test/kipp2:latest
     strategy:
       fail-fast: false
       matrix:
         try: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        SOURCE_IMAGE: [ghcr.io/jcansdale-test/kipp2:latest, alpine]
     runs-on: ubuntu-latest
     steps:
       - run: docker login https://ghcr.io -u token -p ${{ secrets.CR_PAT }}
       - run: docker pull ${{ env.SOURCE_IMAGE }}
-      - run: docker tag ${{ env.SOURCE_IMAGE }} ${{ env.IMAGE }}
+      - run: docker tag ${{ matrix.SOURCE_IMAGE }} ${{ env.IMAGE }}
       - run: docker push ${{ env.IMAGE }}
