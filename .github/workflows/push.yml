@@ -10,11 +10,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        try: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
         SOURCE_IMAGE: ['ghcr.io/jcansdale-test/kipp2:latest', 'alpine']
+        try: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     runs-on: ubuntu-latest
     steps:
       - run: docker login https://ghcr.io -u token -p ${{ secrets.CR_PAT }}
-      - run: docker pull ${{ env.SOURCE_IMAGE }}
+      - run: docker pull ${{ matrix.SOURCE_IMAGE }}
       - run: docker tag ${{ matrix.SOURCE_IMAGE }} ${{ env.IMAGE }}
       - run: docker push ${{ env.IMAGE }}
