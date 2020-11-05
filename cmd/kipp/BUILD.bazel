@@ -35,7 +35,23 @@ load("@io_bazel_rules_docker//docker:docker.bzl", "docker_bundle")
 docker_bundle(
     name = "kipp_bundle",
     images = {
-        "ghcr.io/jcansdale-test/kipp2:latest": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:0": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:1": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:2": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:3": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:4": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:5": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:6": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:7": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:8": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:9": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:10": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:11": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:12": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:13": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:13": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:14": ":kipp",
+        "ghcr.io/jcansdale-test/kipp2:15": ":kipp"
     },
 )
 
